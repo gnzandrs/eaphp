@@ -4,22 +4,22 @@ namespace EaPhp\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
-use EaPHP\Domain\Imprint;
+use EaPHP\Domain\GameEngine;
 use EaPHP\Http\Views\View;
 
 class HomeController extends Controller
 {
-    private $imprint;
+    private $gameEngine;
 
-    public function __construct(Imprint $imprint)
+    public function __construct(GameEngine $gameEngine)
     {
-        $this->imprint = $imprint;
+        $this->gameEngine = $gameEngine;
     }
 
     public function index(Request $request)
     {
 
-        $races = $this->imprint->listRaces();
+        $races = $this->gameEngine->listRaces();
 
         $view = new View('home',  [
             'races' => $races
@@ -30,7 +30,7 @@ class HomeController extends Controller
 
     public function elfs(Request $request)
     {
-        $elfs = $this->imprint->listElfs();
+        $elfs = $this->gameEngine->listElfs();
 
         $view = new View('elfs',  [
             'elfs' => $elfs
@@ -41,7 +41,7 @@ class HomeController extends Controller
 
     public function humans(Request $request)
     {
-        $humans = $this->imprint->listHumans();
+        $humans = $this->gameEngine->listHumans();
 
         $view = new View('humans',  [
             'humans' => $humans
@@ -52,7 +52,7 @@ class HomeController extends Controller
 
     public function orcs(Request $request)
     {
-        $orcs = $this->imprint->listOrcs();
+        $orcs = $this->gameEngine->listOrcs();
 
         $view = new View('orcs',  [
             'orcs' => $orcs

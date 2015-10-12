@@ -46,6 +46,16 @@ abstract class Iluvatar
         return $this->hitPoints;
     }
 
+    public function getName()
+    {
+        return $this->name;
+    }
+
+    public function getWeapon()
+    {
+        return $this->weapon;
+    }
+
     abstract public function salute();
 
     public function takeDamage($amount)
