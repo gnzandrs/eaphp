@@ -8,6 +8,7 @@
 namespace EaPHP\Domain\Races;
 
 use EaPHP\Weapons\Weapon;
+use EaPHP\Weapons\Tool;
 
 abstract class Iluvatar
 {
@@ -19,6 +20,11 @@ abstract class Iluvatar
      * @type Weapon
      */
     protected $weapon;
+
+    /**
+     * @type Tool
+     */
+    protected $tool;
 
     /**
      * Iluvatar constructor.
@@ -41,6 +47,11 @@ abstract class Iluvatar
         $this->weapon = $weapon;
     }
 
+    public function equipTool(Tool $tool)
+    {
+        $this->tool = $tool;
+    }
+
     public function getHitPoints()
     {
         return $this->hitPoints;
@@ -54,6 +65,11 @@ abstract class Iluvatar
     public function getWeapon()
     {
         return $this->weapon;
+    }
+
+    public function getTool()
+    {
+        return $this->tool;
     }
 
     abstract public function salute();
