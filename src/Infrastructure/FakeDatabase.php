@@ -46,7 +46,8 @@ class FakeDatabase
             2 => new Elf('Thranduil', 9),
             3 => new Elf('Legolas', 10),
             4 => new Elf('Tauriel', 10),
-            5 => new Elf('Luthien', 9)
+            5 => new Elf('Luthien', 9),
+            6 => new Elf('Celebrimbor', 8)
         ]);
     }
 
