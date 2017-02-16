@@ -5,12 +5,12 @@ class HumanTest extends PHPUnit_Framework_TestCase
     /** @test */
     function it_should_construct()
     {
-        $human = new \EaPHP\Races\Human(
+        $human = new \EaPHP\Domain\Races\Human(
             'Aragorn',
             10
         );
 
-        $this->assertInstanceOf(\EaPHP\Races\Human::class, $human);
+        $this->assertInstanceOf(\EaPHP\Domain\Races\Human::class, $human);
     }
 
     /** @test */
@@ -18,7 +18,7 @@ class HumanTest extends PHPUnit_Framework_TestCase
     {
         $this->setExpectedException(\InvalidArgumentException::class);
 
-        $human = new \EaPHP\Races\Human(
+        $human = new \EaPHP\Domain\Races\Human(
             'Aragorn',
             'Arwen'
         );

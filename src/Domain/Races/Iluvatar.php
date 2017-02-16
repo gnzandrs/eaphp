@@ -35,6 +35,11 @@ abstract class Iluvatar
     {
         $this->name = $name;
         $this->hitPoints = $hitPoints;
+
+        if(gettype($hitPoints) != 'integer')
+        {
+            throw new \InvalidArgumentException("The second argument must be a number.");
+        }
     }
 
     public function damage(Iluvatar $iluvatar)
